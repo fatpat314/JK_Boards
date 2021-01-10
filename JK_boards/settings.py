@@ -153,21 +153,17 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY') #os.getenv('STRIPE_PUBLIC_KEY
 STRIPE_PRIVATE_KEY = os.getenv('STRIPE_PRIVATE_KEY') #os.getenv('STRIPE_PRIVATE_KEY')
 MAILGUN_PRIVATE_KEY = os.getenv('MAILGUN_PRIVATE_KEY')
 
-<<<<<<< HEAD
+
 AWS_PUBLIC_KEY = os.getenv('AWS_PUBLIC_KEY')
 AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
 BUCKET_NAME = os.getenv('BUCKET_NAME')
-=======
-AWS_PUBLIC_KEY = os.getenv('AKIASWGQ7CCAKRU4GEGZ')
-AWS_SECRET_KEY = os.getenv('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')
-BUCKET_NAME = os.getenv('jkboards')
->>>>>>> ca2f97a429159dd3689ff3fcdc435ec0cd059fff
+
+
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-<<<<<<< HEAD
+
 STATICFILES_STORAGE = 'storages.backend.s3boto3.S3Boto3Storage'
-=======
+
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
->>>>>>> ca2f97a429159dd3689ff3fcdc435ec0cd059fff
