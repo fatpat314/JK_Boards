@@ -1,16 +1,118 @@
-{% extends 'base.html' %}
 
-{% block content %}
 
-<!-- <form action="" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type='submit' value="Save Event">
-</form> -->
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
+.bg {
+  /* The image used */
+  background-image: url("../static/JamesKelly.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Container holding the image and the text */
+.container {
+ position: relative;
+ text-align: center;
+ color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+ position: absolute;
+ bottom: 8px;
+ left: 16px;
+}
+
+/* Top left text */
+.top-left {
+ position: absolute;
+ top: 8px;
+ left: 16px;
+}
+
+/* Top right text */
+.top-right {
+ position: absolute;
+ top: 8px;
+ right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+ position: absolute;
+ bottom: 8px;
+ right: 16px;
+}
+
+/* Centered text */
+.centered {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+h1 {
+  color: #c2c0bc;
+}
+
+.fade-in {
+animation: fadeIn ease 10s;
+-webkit-animation: fadeIn ease 10s;
+-moz-animation: fadeIn ease 10s;
+-o-animation: fadeIn ease 10s;
+-ms-animation: fadeIn ease 10s;
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+</style>
+
+
+<!-- <div class="bg">
+    <img src="static/JamesKelly.jpg" alt="James Kelly, Killin it." style="width:100%;">
+    <div class="top-left" style="left: 250px; font-family:courier,arial,helvetica;"><h1>James Kelly Boards</h1></div>
+    <div class="fade-in-text">
+        <a href="{% url 'payment' %}"><div class="centered" style = "font-family:courier,arial,helvetica;"><h1>Coming Soon</h1></div></a>
+    </div>
+
+</div> -->
 
   <body>
-
+<div class="bg">
     <div class="container">
       <div class="header clearfix">
         <nav>
@@ -26,15 +128,17 @@
       <div class="jumbotron">
         <h1 class="display-3">The Product</h1>
         <p class="lead">Purchase The Product for only $99.</p>
-        <a href="#" id="buy_now_btn" class="btn btn-primary">Buy Now</a>
+        <!-- <a href="#" id="buy_now_btn" class="btn btn-primary">Buy Now</a> -->
       </div>
 
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      
+     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="{{ stripe_public_key }}"
-        data-description="A Django Charge"
+        data-description="James Kelly Skateboards"
         data-amount="500"
         data-locale="auto">
     </script>
+
 
       <script src="https://js.stripe.com/v3/"></script>
 
@@ -62,10 +166,6 @@
       <footer class="footer">
         <p>&copy; Store 2017</p>
       </footer>
-    </div> <!-- /container -->
+    </div>
   </body>
 </html>
-
-
-
-{% endblock %}
