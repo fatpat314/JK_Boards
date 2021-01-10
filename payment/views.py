@@ -20,7 +20,19 @@ def index(request):
     return render(request, "home.html", context)
 
 def thanks(request):
-    return render(request, "thanks.html")
+    """send email"""
+    # send_simple_message()
+
+    form = OrderForm()
+
+    if request.method == 'POST':
+        print(request.POST)
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+    context = {'form' : form,}
+
+    return render(request, "thanks.html", context)
 
 def send_simple_message():
     print("SENT!!!!!")
@@ -33,8 +45,6 @@ def send_simple_message():
               "text": "Testing some Mailgun awesomness!"})
 
 def payment(request):
-
-    send_simple_message()
     stripe.api_key = settings.STRIPE_PRIVATE_KEY
 
     session = stripe.checkout.Session.create(

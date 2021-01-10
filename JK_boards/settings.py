@@ -130,6 +130,6 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, 'static'),
 # )
 """                                                       V these is the real keys V"""
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_TEST_PUBLIC_KEY') #os.getenv('STRIPE_PUBLIC_KEY')
-STRIPE_PRIVATE_KEY = os.getenv('STRIPE_TEST_PRIVATE_KEY') #os.getenv('STRIPE_PRIVATE_KEY')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY') #os.getenv('STRIPE_PUBLIC_KEY')
+STRIPE_PRIVATE_KEY = os.getenv('STRIPE_PRIVATE_KEY') #os.getenv('STRIPE_PRIVATE_KEY')
 MAILGUN_PRIVATE_KEY = os.getenv('MAILGUN_PRIVATE_KEY')
