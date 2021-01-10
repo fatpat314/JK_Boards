@@ -19,6 +19,7 @@ django-threadedcomments==1.2
 djangorestframework==3.12.2
 docutils==0.16
 Flask==1.1.2
+gunicorn==20.0.4
 idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.2
@@ -38,4 +39,4 @@ sqlparse==0.4.1
 stripe==2.55.1
 urllib3==1.26.2
 Werkzeug==1.0.1
-gunicorn==20.0.4
+whitenoise==5.2.0
