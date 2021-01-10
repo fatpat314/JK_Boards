@@ -45,11 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'payment',
+    'storages',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,7 +143,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
@@ -152,3 +152,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY') #os.getenv('STRIPE_PUBLIC_KEY')
 STRIPE_PRIVATE_KEY = os.getenv('STRIPE_PRIVATE_KEY') #os.getenv('STRIPE_PRIVATE_KEY')
 MAILGUN_PRIVATE_KEY = os.getenv('MAILGUN_PRIVATE_KEY')
+
+AWS_PUBLIC_KEY = os.getenv('AKIASWGQ7CCAKRU4GEGZ')
+AWS_SECRET_KEY = os.getenv('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')
+BUCKET_NAME = os.getenv('jkboards')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backend.s3boto3.S3Boto3Storage'
