@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .forms import OrderForm
+from django.http import HttpResponse, HttpResponseRedirect
+from .forms import OrderForm, RegisterForm
 from django.conf import settings
 from django.urls import reverse
 
@@ -19,6 +19,25 @@ def index(request):
     context = {'form' : form,}
     return render(request, "home.html", context)
 
+def info(request):
+    return render(request, "info.html")
+
+def register(request):
+    form = RegisterForm()
+
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('payment'))
+    context = {'form' : form,}
+    return render(request, "register.html", context)
+
+name = 'x'
+address = 'x'
+country = 'x'
+order_info = 'x'
+
 def thanks(request):
     """send email"""
     # send_simple_message()
@@ -26,10 +45,27 @@ def thanks(request):
     form = OrderForm()
 
     if request.method == 'POST':
-        print(request.POST)
+        info = request.POST
+        print("INFO", info.dict())
+        for key, value in info.dict().items():
+            print(key, ' : ', value)
+            if key == 'name':
+                global name
+                name = value
+                print("NAME", name)
+            if key == 'address':
+                global address
+                address = value
+            if key == 'country':
+                global country
+                country = value
+        global order_info
+        order_info = "Name: " + name + ", Address: " + address + ", Country: " + country
+        print("ORDER_INFO", order_info)
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
+            send_simple_message()
     context = {'form' : form,}
 
     return render(request, "thanks.html", context)
@@ -39,10 +75,10 @@ def send_simple_message():
     return requests.post(
         "https://api.mailgun.net/v3/inclineskateboards.com/messages",
         auth=("api", settings.MAILGUN_PRIVATE_KEY),
-        data={"from": "MAILGUN TEST <mailgun@inclineskateboards.com>",
+        data={"from": "JK_BOARDS <mailgun@inclineskateboards.com>",
               "to": ["w.patrick.kelly@gmail.com", "YOU@inclineskateboards.com"],
-              "subject": "Hello",
-              "text": "Testing some Mailgun awesomness!"})
+              "subject": "NEW ORDER CONFIRMED!!!",
+              "text": order_info})
 
 def payment(request):
     stripe.api_key = settings.STRIPE_PRIVATE_KEY
