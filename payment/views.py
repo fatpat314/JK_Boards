@@ -20,7 +20,7 @@ def index(request):
     return render(request, "home.html", context)
 
 def info(request):
-    return render(request, "info.html")
+    return render(request, "index.html")
 
 def register(request):
     form = RegisterForm()
@@ -31,7 +31,7 @@ def register(request):
             form.save()
             return HttpResponseRedirect(reverse('payment'))
     context = {'form' : form,}
-    return render(request, "register.html", context)
+    return render(request, "generic.html", context)
 
 name = 'x'
 address = 'x'
@@ -66,6 +66,7 @@ def thanks(request):
         if form.is_valid():
             form.save()
             send_simple_message()
+            return HttpResponseRedirect(reverse('info'))
     context = {'form' : form,}
 
     return render(request, "thanks.html", context)
@@ -98,4 +99,4 @@ def payment(request):
         'stripe_public_key' : settings.STRIPE_PUBLIC_KEY
     }
 
-    return render(request, "payment.html", context)
+    return render(request, "pay.html", context)

@@ -1,26 +1,68 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
+{% include "base.html" %}
 
-    <style>
-    img {
-      float: left;
-    }
-    </style>
+{% block content %}
 
-        <p><img src="../static/jameskelly_board2.jpeg" alt="Pineapple" style="width:50%;height:50%;">
+<style media="screen">
+    .jumbotron
+{
+    padding-top: 0px;
+    padding-right: 1000px;
+    padding-bottom:0px;
+    background-color: #fffaf1;
+    background-size: cover;
+    background: contain;
+    width: 50%; /* make sure to define width to fill container */
+    height: 700px; /* define the height in pixels or make sure   */
+                   /* you have something in your div with height */
+                   /* so you can see your image */
+    max-width:1400px;  /* define the max width */
+ }
+</style>
+<!-- <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head> -->
+
+<body style="background-color:#000000;">
+    <!-- <img src="static/JamesKelly.jpg" alt=""> -->
+    <!-- <div class="bg"></div> -->
+    <!-- <p>This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p> -->
+<div class="">
+
+    <div class="bg">
+
+        <!-- "https://jkboards.s3.us-west-1.amazonaws.com/JamesKelly.jpg?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCd4HkmJ0c%2BIICRelOoXpC89bT0ZSmPbi9Ekno1NCHEUAIgHQB%2FZXnqArNvLL80p8KgI41zGa5Fg%2F1P1qqo1%2F0Y0gwq%2FwIIhv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODUxMjE4MzcxODQiDK2lZAvD69LxG3BKZCrTArzYfX9X60oXqSveVjV2nM9GuOIEePRlQIExUMb4wh4Q5OzY3YkOXh9Rw1QExwjdp115Rgrf0xQLmQYR%2BsynvUlgdhaK9TilXFLTLemiT6RuM%2F6k9Td%2BUjSFNLoX%2BW8UMwjJEn9FJ1iNIolhjvY%2BX4eA4mBWqiJfsDGeLO0%2FIyZBtTs2SRmF1Slj99S1l7ACMs6C7feiOQln5lglMkZCo4nEKtyt7bCDr8x7ErZBcODoBce67cFPsmDbAyPQyVDvy9b0YfcjmgjBhABzPvd%2BXEfMYpWIEgSf8KTMCEcaUNWWEaKy3eCSu6UbLO3UVQxAG3YCOj8Rt20ZMqVX%2FAgF0DRWbHNm874nn%2FsXNOQRwOB5yxFT8EGs4mDWdn17vZ%2BCCm8VqOrjFnnCJEOHr8%2FFCa7WjyhPe3U8i%2FXJHBQbB8vCL0wbjfELcy8SScmaCD3MizDtIjDrj%2Br%2FBTqzArW474BIoAqpykjyiULyA6EDTrG721qyJG91DVTAixOCCjKbjjpYs%2BOqMh5uIwqv0mhgPe%2FqHkD8BKDUpRAa8ipvQ%2BvplOF0ZgBdcKk89kVA%2Ban82XSGIpDOQTG%2Bcje8DDoihRt2qGbjdyjFnNa8mlEBav%2BvGayq7YQdIQFMH1a8UZAeDU6cvARmnDX3xmQ%2BT3r5JrBtDSLD0x3pYQcZS7ADxh8LgDEI9l%2F5e3gePl%2B1HnGD0KR4d7XN0GMimRVEgnGtdLskENhCB6Y%2BJrClpOtfA90xENFL5%2F8DqfDxLQWPCYpaDyLN5fi9esFXP4dw3S0sQBj%2Fc9%2Bi808zJn3V05nwKt2XqlBkeeSQWy7lqnhB93JfJBCixHSmUaaB%2BvbTQ3XYAVg2Hy4hQ14HyLxkR9CMOAs%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210110T055419Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIASWGQ7CCABXYSJJ7O%2F20210110%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=ce57972fe2c25a7df3a7271d564519f46b7411ef126f3a5f6dbb40a8996c8ebe" -->
+
+        <img src="../static/Mary-Hill.jpg" alt="James Kelly, Killin it." style="width:100%;">
+        <div class="top-left" style="left: 250px; font-family:courier,arial,helvetica;"><h1>James Kelly Boards</h1></div>
+        <div class="container centered">
+            <div class="jumbotron">
+
+
+            <!-- <a href="{% url 'info' %}"><div class="centered" style = "font-family:courier,arial,helvetica;"><h1>Coming Soon</h1></div></a> -->
+            <!-- <img class="top-left col-3 col-s-12" src="../static/jameskelly_board2.jpeg" alt="Pineapple" width="1000%" height="100%"> -->
+            <p class="text-custom col-3 col-s-12" style="color:black;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
+        </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<!-- <form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type='submit' value="Save Event">
+</form> -->
+<img src="../static/jameskelly_board1.jpeg" alt="" style="width:100%; height:100%;"
+
+{% endblock %}
+
+
+        <!-- <p><img src="../static/jameskelly_board2.jpeg" alt="Pineapple" style="width:50%;height:50%;">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
-        <img src="../static/jameskelly_board1.jpeg" alt="" style="width:100%;height:100%;">
+        <img src="../static/jameskelly_board1.jpeg" alt="" style="width:100%; height:100%;">
         <a href="/register"><button type="button" name="button">Register</button></a>
 
 
-        <a href="/payment"><button type="button" name="button">Guest</button></a>
-
-
-        hello
-    </body>
-</html>
+        <a href="/payment"><button type="button" name="button">Guest</button></a> -->

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Transitive by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>James Kelly Boards</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../static/temp/css/main.css" />
+	</head>
+	<body class="subpage" style="background-image: url('../static/Mary-Hill.jpg');">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="/info">James Kelly Boards <span>by James Kelly</span></a></div>
+				<a href="#menu" class="toggle"><span>Menu</span></a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+        <section class="wrapper style2">
+            <div class="">
+                <div class="">
+                    <h2 class="align-center">BUY A BOARD</h2>
+                    <hr />
+                    <!-- <div class="image fit centered">
+                        <img src="../static/jameskelly_board2.jpeg" alt="" style="width: 25%; height: 25%"/>
+                    </div> -->
+
+                </div>
+            </div>
+
+
+
+			<section id="one">
+				<div class="inner">
+					<!-- <div class="box"> -->
+						<div class="content">
+							<header class="align-center">
+                                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                   data-key="{{ stripe_public_key }}"
+                                   data-description="James Kelly Skateboards"
+                                   data-amount="500"
+                                   data-locale="auto">
+                               </script>
+
+
+                                 <script src="https://js.stripe.com/v3/"></script>
+
+                                 <script>
+
+                                   var stripe = Stripe('{{ stripe_public_key }}')
+
+                                   const buy_now_button = document.querySelector('#buy_now_btn')
+
+                                   buy_now_button.addEventListener('click', event => {
+                                       stripe.redirectToCheckout({
+                                       // Make the id field from the Checkout Session creation API response
+                                       // available to this file, so you can provide it as parameter here
+                                       // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+                                         sessionId: data.session_id
+                                       }).then(function (result) {
+                                         // If `redirectToCheckout` fails due to a browser or network
+                                         // error, display the localized error message to your customer
+                                         // using `result.error.message`.
+                                       });
+                                     })
+                                   })
+                                 </script>
+						</div>
+
+
+					</div>
+			</section>
+            </section>
+
+
+
+
+
+		<!-- Footer -->
+
+
+		<!-- Scripts -->
+			<script src="static/temp/js/jquery.min.js"></script>
+			<script src="static/temp/js/jquery.scrolly.min.js"></script>
+			<script src="static/temp/js/jquery.scrollex.min.js"></script>
+			<script src="static/temp/js/skel.min.js"></script>
+			<script src="static/temp/js/util.js"></script>
+			<script src="static/temp/js/main.js"></script>
+
+	</body>
+</html>
