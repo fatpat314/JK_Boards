@@ -1,68 +1,180 @@
-{% include "base.html" %}
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Transitive by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>James Kelly Boards</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://jkboards.s3-us-west-1.amazonaws.com/temp/css/main.css" />
+	</head>
+	<body>
 
-{% block content %}
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="/info">James Kelly Boards <span>by James Kelly</span></a></div>
+				<!-- <a href="#menu" class="toggle"><span>Menu</span></a> -->
+			</header>
 
-<style media="screen">
-    .jumbotron
-{
-    padding-top: 0px;
-    padding-right: 1000px;
-    padding-bottom:0px;
-    background-color: #fffaf1;
-    background-size: cover;
-    background: contain;
-    width: 50%; /* make sure to define width to fill container */
-    height: 700px; /* define the height in pixels or make sure   */
-                   /* you have something in your div with height */
-                   /* so you can see your image */
-    max-width:1400px;  /* define the max width */
- }
-</style>
-<!-- <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head> -->
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">Generic</a></li>
+				<li><a href="elements.html">Elements</a></li>
+			</ul>
+		</nav>
 
-<body style="background-color:#000000;">
-    <!-- <img src="static/JamesKelly.jpg" alt=""> -->
-    <!-- <div class="bg"></div> -->
-    <!-- <p>This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p> -->
-<div class="">
+		<!-- Banner -->
+		<!--
+			To use a video as your background, set data-video to the name of your video without
+			its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+			formats to work correctly.
+		-->
+			<section id="banner">
+				<img class="image fit" src="https://jkboards.s3-us-west-1.amazonaws.com/JamesKelly.jpg" alt="" style="width: 75%; height: 75%" />
+				<div class="inner">
+					<h1>James Kelly Boards</h1>
+					<p>Some kind of slogan
+					<a href="/register/" class="button special scrolly">Get Started</a>
+				</div>
+			</section>
 
-    <div class="bg">
+		<!-- One -->
+			<!-- <section id="one" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
+						<div class="box">
+							<div class="image fit">
+								<img src="../static/jameskelly_board2.jpeg" alt=""/>
+							</div>
+							<div class="content">
+								<header class="align-center">
+									<h2>Lorem ipsum dolor</h2>
+									<p>maecenas feugiat ex purus, quis volutpat lacus placerat</p>
+								</header>
+								<hr />
+								<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada. Praesent in sem ex. Morbi mattis sapien pretium tellus venenatis, at egestas urna ornare.</p>
+								<p>Vivamus fermentum nibh vel pharetra blandit. Cras a purus urna. Sed et libero ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse id hendrerit felis. Nulla viverra tempor dui at congue. Pellentesque quis nulla ornare, congue nisi id, finibus nulla. Aliquam sit amet hendrerit purus. Donec libero massa, posuere fermentum eros sit amet, maximus fringilla augue. Maecenas at rhoncus lorem. Vivamus ultricies consequat est, efficitur convallis libero. Vivamus rutrum semper mauris, vitae consequat eros tempor ac. Pellentesque et ornare sapien</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
 
-        <!-- "https://jkboards.s3.us-west-1.amazonaws.com/JamesKelly.jpg?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCd4HkmJ0c%2BIICRelOoXpC89bT0ZSmPbi9Ekno1NCHEUAIgHQB%2FZXnqArNvLL80p8KgI41zGa5Fg%2F1P1qqo1%2F0Y0gwq%2FwIIhv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODUxMjE4MzcxODQiDK2lZAvD69LxG3BKZCrTArzYfX9X60oXqSveVjV2nM9GuOIEePRlQIExUMb4wh4Q5OzY3YkOXh9Rw1QExwjdp115Rgrf0xQLmQYR%2BsynvUlgdhaK9TilXFLTLemiT6RuM%2F6k9Td%2BUjSFNLoX%2BW8UMwjJEn9FJ1iNIolhjvY%2BX4eA4mBWqiJfsDGeLO0%2FIyZBtTs2SRmF1Slj99S1l7ACMs6C7feiOQln5lglMkZCo4nEKtyt7bCDr8x7ErZBcODoBce67cFPsmDbAyPQyVDvy9b0YfcjmgjBhABzPvd%2BXEfMYpWIEgSf8KTMCEcaUNWWEaKy3eCSu6UbLO3UVQxAG3YCOj8Rt20ZMqVX%2FAgF0DRWbHNm874nn%2FsXNOQRwOB5yxFT8EGs4mDWdn17vZ%2BCCm8VqOrjFnnCJEOHr8%2FFCa7WjyhPe3U8i%2FXJHBQbB8vCL0wbjfELcy8SScmaCD3MizDtIjDrj%2Br%2FBTqzArW474BIoAqpykjyiULyA6EDTrG721qyJG91DVTAixOCCjKbjjpYs%2BOqMh5uIwqv0mhgPe%2FqHkD8BKDUpRAa8ipvQ%2BvplOF0ZgBdcKk89kVA%2Ban82XSGIpDOQTG%2Bcje8DDoihRt2qGbjdyjFnNa8mlEBav%2BvGayq7YQdIQFMH1a8UZAeDU6cvARmnDX3xmQ%2BT3r5JrBtDSLD0x3pYQcZS7ADxh8LgDEI9l%2F5e3gePl%2B1HnGD0KR4d7XN0GMimRVEgnGtdLskENhCB6Y%2BJrClpOtfA90xENFL5%2F8DqfDxLQWPCYpaDyLN5fi9esFXP4dw3S0sQBj%2Fc9%2Bi808zJn3V05nwKt2XqlBkeeSQWy7lqnhB93JfJBCixHSmUaaB%2BvbTQ3XYAVg2Hy4hQ14HyLxkR9CMOAs%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210110T055419Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIASWGQ7CCABXYSJJ7O%2F20210110%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=ce57972fe2c25a7df3a7271d564519f46b7411ef126f3a5f6dbb40a8996c8ebe" -->
+		<!-- Two -->
+			<section id="two" class="wrapper style3">
+				<div class="inner">
+					<div id="flexgrid">
+						<div>
+							<header>
+								<h3>Tempus Feugiat</h3>
+							</header>
+							<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+						<div>
+							<header>
+								<h3>Aliquam Nulla</h3>
+							</header>
+							<p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed </p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+						<div>
+							<header>
+								<h3>Sed Magna</h3>
+							</header>
+							<p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
 
-        <img src="../static/Mary-Hill.jpg" alt="James Kelly, Killin it." style="width:100%;">
-        <div class="top-left" style="left: 250px; font-family:courier,arial,helvetica;"><h1>James Kelly Boards</h1></div>
-        <div class="container centered">
-            <div class="jumbotron">
+		<!-- Three -->
+			<section id="three" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
 
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="https://jkboards.s3-us-west-1.amazonaws.com/jameskelly_board1.jpeg" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<h2>Lorem ipsum dolor</h2>
+										<p>maecenas feugiat ex purus, quis volutpat lacus placerat</p>
+									</header>
+									<hr />
+									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada. Praesent in sem ex. Morbi mattis sapien pretium tellus venenatis, at egestas urna ornare.</p>
+								</div>
+							</div>
+						</div>
 
-            <!-- <a href="{% url 'info' %}"><div class="centered" style = "font-family:courier,arial,helvetica;"><h1>Coming Soon</h1></div></a> -->
-            <!-- <img class="top-left col-3 col-s-12" src="../static/jameskelly_board2.jpeg" alt="Pineapple" width="1000%" height="100%"> -->
-            <p class="text-custom col-3 col-s-12" style="color:black;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
-        </div>
-        </div>
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="https://jkboards.s3-us-west-1.amazonaws.com/jameskelly_board3.jpeg" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<h2>Vestibulum sit amet</h2>
+										<p>mattis sapien pretium tellus venenatis</p>
+									</header>
+									<hr />
+									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada. Praesent in sem ex. Morbi mattis sapien pretium tellus venenatis, at egestas urna ornare.</p>
+								</div>
+							</div>
+						</div>
 
-    </div>
-</div>
-</body>
-<!-- <form action="" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type='submit' value="Save Event">
-</form> -->
-<img src="../static/jameskelly_board1.jpeg" alt="" style="width:100%; height:100%;"
+					</div>
+				</div>
+			</section>
 
-{% endblock %}
+		<!-- Four -->
+			<section id="four" class="wrapper style3">
+				<div class="inner">
 
+					<header class="align-center">
+						<h2>Morbi interdum mollis sapien</h2>
+						<p>Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada. Praesent in sem ex. Morbi mattis sapien pretium tellus venenatis, at egestas urna ornare.</p>
+					</header>
 
-        <!-- <p><img src="../static/jameskelly_board2.jpeg" alt="Pineapple" style="width:50%;height:50%;">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
-        <img src="../static/jameskelly_board1.jpeg" alt="" style="width:100%; height:100%;">
-        <a href="/register"><button type="button" name="button">Register</button></a>
+				</div>
+			</section>
 
+		<!-- Footer -->
+			<footer id="footer" class="wrapper">
+				<div class="inner">
+					<section>
+						<div class="box">
 
-        <a href="/payment"><button type="button" name="button">Guest</button></a> -->
+						</div>
+					</section>
+					<div class="copyright">
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>. Video <a href="http://coverr.co/">Coverr</a>.
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/temp/js/jquery.min.js"></script>
+			<script src="static/temp/js/jquery.scrolly.min.js"></script>
+			<script src="static/temp/js/jquery.scrollex.min.js"></script>
+			<script src="static/temp/js/skel.min.js"></script>
+			<script src="static/temp/js/util.js"></script>
+			<script src="static/temp/js/main.js"></script>
+
+	</body>
+</html>

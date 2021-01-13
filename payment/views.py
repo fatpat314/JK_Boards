@@ -9,18 +9,10 @@ import stripe, requests
 
 # Create your views here.
 def index(request):
-    form = OrderForm()
-
-    if request.method == 'POST':
-        print(request.POST)
-        form = OrderForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {'form' : form,}
-    return render(request, "home.html", context)
+    return render(request, "home.html")
 
 def info(request):
-    return render(request, "index.html")
+    return render(request, "info.html")
 
 def register(request):
     form = RegisterForm()
@@ -31,7 +23,7 @@ def register(request):
             form.save()
             return HttpResponseRedirect(reverse('payment'))
     context = {'form' : form,}
-    return render(request, "generic.html", context)
+    return render(request, "register.html", context)
 
 name = 'x'
 address = 'x'
@@ -39,8 +31,6 @@ country = 'x'
 order_info = 'x'
 
 def thanks(request):
-    """send email"""
-    # send_simple_message()
 
     form = OrderForm()
 
@@ -65,6 +55,7 @@ def thanks(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
+            """send email"""
             send_simple_message()
             return HttpResponseRedirect(reverse('info'))
     context = {'form' : form,}
@@ -87,16 +78,18 @@ def payment(request):
     session = stripe.checkout.Session.create(
         payment_method_types=['card'],
         line_items = [{
-            'price': 'price_1I77x6EkTNLsoF64jpgmu7k4',
+            'price': 'price_1I8yckEkTNLsoF64tWCHXqq5',
             'quantity': 1,
         }],
         mode = 'payment',
-        success_url= request.build_absolute_uri(reverse('thanks')) + '?session_id={CEHCKOUT_SESSION_ID}',
-        cancel_url= request.build_absolute_uri(reverse('index')),
+        success_url= request.build_absolute_uri(reverse('thanks')),
+        cancel_url= request.build_absolute_uri(reverse('info')),
     )
+
+
     context = {
         'session_id' : session.id,
         'stripe_public_key' : settings.STRIPE_PUBLIC_KEY
     }
 
-    return render(request, "pay.html", context)
+    return render(request, "payment.html", context)
