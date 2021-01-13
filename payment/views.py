@@ -82,7 +82,7 @@ def payment(request):
             'quantity': 1,
         }],
         mode = 'payment',
-        success_url= request.build_absolute_uri(reverse('thanks')),
+        success_url= request.build_absolute_uri(reverse('thanks')) + '?session_id={CEHCKOUT_SESSION_ID}',
         cancel_url= request.build_absolute_uri(reverse('info')),
     )
 
