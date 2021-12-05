@@ -87,6 +87,7 @@ def payment(request):
     )
 
 
+
     context = {
         'session_id' : session.id,
         'stripe_public_key' : settings.STRIPE_PUBLIC_KEY
